@@ -18,6 +18,7 @@
 import csv
 
 cities = []
+City = {}
 
 def cityreader(cities=[]):
   
