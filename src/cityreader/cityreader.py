@@ -4,11 +4,11 @@
 class City():
   def __init__(self, name, latitude, longitude):
     self.name = name
-    self.latitude = latitude
-    self.longitude = longitude
+    self.latitude = float(latitude)
+    self.longitude = float(longitude)
 
   def makeThings(name, latitude, longitude):
-    City = {"City": name, "latitude": latitude, "longitued": longitude }
+    City = {"City": name, "lat": latitude, "lon": longitude }
     cities.append(City)
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -53,10 +53,10 @@ cityreader(cities)
 
 # Print the list of cities (name, lat, lon), 1 record per line.
 
-# for c in cities:
-#     print(f'City: {c[0]}, Lat: {c[3]}, Lon: {c[4]}')
+for c in cities:
+    print(c)
 
-print(cities)
+
 
 
 
