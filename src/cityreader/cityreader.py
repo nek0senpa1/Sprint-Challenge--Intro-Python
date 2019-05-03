@@ -4,12 +4,16 @@
 class City():
   def __init__(self, name, latitude, longitude):
     self.name = name
-    self.latitude = float(latitude)
-    self.longitude = float(longitude)
+    self.lat = float(latitude)
+    self.lon = float(longitude)
 
-  def makeThings(name, latitude, longitude):
-    City = {"City": name, "lat": latitude, "lon": longitude }
-    cities.append(City)
+  def __str__(self):
+    return f'"City": {self.name}, "lat": {self.lat}, "lon": {self.lon}'
+
+  # def makeThings(name, latitude, longitude):
+    # City = {"City": name, "lat": latitude, "lon": longitude }
+    # cities.append(City)
+    # return City
 
 # We have a collection of US cities with population over 750,000 stored in the
 # file "cities.csv". (CSV stands for "comma-separated values".)
@@ -37,7 +41,7 @@ def cityreader(cities=[]):
     next(csvfile)
     for line in stuff:
       # cities.append(line)
-      City.makeThings(line[0], line[3], line[4])
+      cities.append(City(line[0], line[3], line[4]))
 
 
     
@@ -47,7 +51,7 @@ def cityreader(cities=[]):
   # For each city record, create a new City instance and add it to the 
   # `cities` list
     
-    # return cities
+    return cities
 
 cityreader(cities)
 
