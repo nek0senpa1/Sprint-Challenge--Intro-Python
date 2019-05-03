@@ -23,6 +23,8 @@ def cityreader(cities=[]):
   
   with open('cities.csv', newline='') as csvfile:
     stuff = csv.reader(csvfile, delimiter =",", quotechar='|')
+    # next(csv.reader('cities.csv'))
+    next(csvfile)
     for line in stuff:
       cities.append(line)
 
